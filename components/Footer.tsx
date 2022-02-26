@@ -57,7 +57,7 @@ const Footer: NextPage = () => {
                 <span>EN</span>
               </div>
             </div>
-            <div className="flex gap-4 justify-between  items-center">
+            <div className="flex gap-4 mb-5 justify-between  items-center">
               <div className="flex gap-2 items-center">
                 <div className=" bg-[#1fc7d4] flex items-center p-1 rounded-full">
                   <Image src="/logo.svg" height={20} width={20} />
