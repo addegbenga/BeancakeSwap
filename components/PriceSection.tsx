@@ -15,7 +15,7 @@ const PriceSection: NextPage = () => {
         </p>
         <div>
           <div className="py-6 lg:max-w-xl lg:mx-auto flex flex-col lg:grid lg:grid-cols-2 lg:gap-12 gap-10">
-            <div className="bg-[#ffb439] origin-top-left -rotate-3 mx-6 lg:mx-0 p-6 py-8 rounded-3xl ">
+            <div className="bg-[#ffb439] lg:origin-top-left lg:-rotate-3 mx-6 lg:mx-0 p-6 py-8 rounded-3xl ">
               <div className="flex justify-end pb-6">
                 <Image src="/price1.svg" width={30} height={30} />
               </div>
@@ -31,7 +31,7 @@ const PriceSection: NextPage = () => {
                 <AiOutlineArrowRight />
               </button>
             </div>
-            <div className="bg-[#7141d4] origin-top-right rotate-3 mx-6 lg:mx-0 p-6 py-8 rounded-3xl ">
+            <div className="bg-[#7141d4] lg:origin-top-right lg:rotate-3 mx-6 lg:mx-0 p-6 py-8 rounded-3xl ">
               <div className="flex justify-end pb-6">
                 <Image src="/lottery.svg" width={30} height={30} />
               </div>
