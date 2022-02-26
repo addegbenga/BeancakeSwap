@@ -4,20 +4,35 @@ import Image from "next/image";
 const TradeSection: NextPage = () => {
   return (
     <div className="bg-black">
-      <div className="container px-6 pt-24 pb-20">
+      <div className="container lg:max-w-4xl  lg:mx-auto lg:px-0 px-6 pt-24 pb-20 lg:pb-44">
         <div className="flex relative">
-          <div className="absolute right-0  ">
-            <Image src="/cake.webp" width={200} height={200} />
+          <div className="absolute right-0 w-60 lg:w-[28rem]  ">
+            <Image
+              src="/cake.webp"
+              width={200}
+              height={200}
+              layout="responsive"
+            />
           </div>
-          <div className="absolute right-0">
-            <Image src="/btc.webp" width={200} height={200} />
+          <div className="absolute w-60  lg:w-[28rem]  right-0">
+            <Image
+              src="/btc.webp"
+              width={200}
+              height={200}
+              layout="responsive"
+            />
           </div>
-          <div className="absolute right-0">
-            <Image src="/bnb.webp" width={200} height={200} />
+          <div className="absolute w-60   lg:w-[28rem]  right-0">
+            <Image
+              src="/bnb.webp"
+              width={200}
+              height={200}
+              layout="responsive"
+            />
           </div>
         </div>
-        <div className="mt-56">
-          <h1 className="text-3xl font-bold text-white text-opacity-80">
+        <div className="mt-56 pt-10 lg:mt-24 lg:max-w-md">
+          <h1 className="text-3xl lg:text-4xl font-bold text-white text-opacity-80 lg:text-opacity-100">
             <span className="text-[#9a6aff]">Trade</span> anything. No
             registration, no hassle.
           </h1>
