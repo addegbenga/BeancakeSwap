@@ -25,7 +25,7 @@ const TrustedBy: NextPage = () => {
           </span>
         </div>
         <div className="my-3  flex lg:grid grid-cols-3 lg:max-w-6xl lg:mx-auto  flex-col gap-4">
-          <div className="bg-[#27262c] lg:border border-[#aea4c7] p-4 mx-6 lg:pr-32 lg:pl-4 lg:mx-0 lg:relative rounded-2xl ">
+          <div className="bg-[#27262c] border-opacity-20 lg:border border-[#aea4c7] p-4 mx-6 lg:pr-32 lg:pl-4 lg:mx-0 lg:relative rounded-2xl ">
             <div className="flex lg:mt-24 justify-between  items-start">
               <h1 className="text-3xl  text-white font-bold">
                 3.1 million <br />{" "}
@@ -35,7 +35,7 @@ const TrustedBy: NextPage = () => {
             </div>
             <p className=" text-[#aea4c7] py-4">in the last 30 days</p>
           </div>
-          <div className="bg-[#27262c] lg:border border-[#aea4c7] lg:relative p-4 mx-6 lg:mx-0 rounded-2xl">
+          <div className="bg-[#27262c] lg:border border-opacity-20 border-[#aea4c7] lg:relative p-4 mx-6 lg:mx-0 rounded-2xl">
             <div className="flex lg:mt-24 justify-between items-start">
               <h1 className="text-3xl text-white font-bold">
                 5.1 million <br />{" "}
@@ -45,7 +45,7 @@ const TrustedBy: NextPage = () => {
             </div>
             <p className=" text-[#aea4c7] py-4">in the last 30 days</p>
           </div>{" "}
-          <div className="bg-[#27262c] lg:border border-[#aea4c7] lg:relative p-4 mx-6 lg:mx-0 rounded-2xl">
+          <div className="bg-[#27262c] border-opacity-20 lg:border border-[#aea4c7] lg:relative p-4 mx-6 lg:mx-0 rounded-2xl">
             <div className="flex lg:mt-24 justify-between items-start">
               <h1 className="text-3xl text-white font-bold">
                 $12 billion <br />{" "}

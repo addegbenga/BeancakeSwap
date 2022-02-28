@@ -71,7 +71,7 @@ const Footer: NextPage = () => {
               </button>
             </div>
           </div>
-          <ul className="flex flex-col gap-2 pt-4 lg:pt-0 lg:gap-4">
+          <ul className="flex mb-8 lg:mb-0 flex-col gap-2 pt-4 lg:pt-0 lg:gap-4">
             <li className="font-semibold lg:text-base text-sm text-[#9a6aff] ">
               ABOUT
             </li>
@@ -86,7 +86,7 @@ const Footer: NextPage = () => {
               CAKE Token
             </li>
           </ul>
-          <ul className="flex flex-col gap-2 lg:gap-4">
+          <ul className="flex mb-8 lg:mb-0 flex-col gap-2 lg:gap-4">
             <li className="font-semibold text-sm lg:text-base text-[#9a6aff] ">
               HELP
             </li>
@@ -100,7 +100,7 @@ const Footer: NextPage = () => {
               Guides
             </li>
           </ul>{" "}
-          <ul className="flex flex-col gap-2 lg:gap-4">
+          <ul className="flex mb-8 lg:mb-0 flex-col gap-2 lg:gap-4">
             <li className="font-semibold text-sm lg:text-base text-[#9a6aff] ">
               DEVELOPERS
             </li>
