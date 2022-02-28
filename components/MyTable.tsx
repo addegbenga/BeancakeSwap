@@ -4,7 +4,7 @@ import { MdKeyboardArrowUp } from "react-icons/md";
 const MyTable: NextPage = () => {
   return (
     <div className="">
-      <div className="flex bg-[#27262c] p-4 items-center  justify-between">
+      <div className="flex bg-[#27262c] rounded-t-2xl p-5 items-center  justify-between">
         <div className="flex items-center gap-1">
           <Image src="/bnbcake.svg" height={23} width={23} />
           <span className="font-semibold text-[#f4eeff]">CAKE-BNB</span>

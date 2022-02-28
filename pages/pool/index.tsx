@@ -9,7 +9,7 @@ import { BsFillGrid3X2GapFill } from "react-icons/bs";
 import { AiOutlineBars, AiOutlineCaretDown } from "react-icons/ai";
 import Footer from "../../components/Footer";
 
-const Earn: NextPage = () => {
+const Pool: NextPage = () => {
   const [drop, setDrop] = useState<boolean>(false);
 
   const handleDropDown = () => {
@@ -74,39 +74,19 @@ const Earn: NextPage = () => {
         <div className="flex max-w-6xl lg:justify-center lg:mx-auto py-2 mx-6 font-semibold text-white gap-3">
           <Link href="/earn"> Farms</Link>
           <Link href="/pool"> Pools</Link>
-          {/* <h1 className="text-[#c1bed3]">Pools</h1> */}
         </div>
         <div className="bg-[#363559]">
-          <div className=" max-w-6xl mx-auto lg:items-center lg:flex lg:justify-between lg:py-6 p-6 lg:p-0 py-7">
+          <div className=" max-w-6xl mx-auto lg:items-center lg:flex lg:justify-between lg:py-7 p-6 lg:p-0 py-7">
             <div>
               <h1 className="text-[#9a6aff]  text-4xl lg:text-6xl font-black mb-4">
-                Syrup Pools
+                Farms
               </h1>
               <p className=" text-[#f4eeff] lg:text-lg font-semibold">
-                Just stake some tokens to earn.
+                Stake LP tokens to earn.
               </p>
-              <p className="text-[#f4eeff] lg:text-lg lg:-mt-1 font-semibold">
-                High APR, low risk.
-              </p>
-            </div>
-            <div className="flex  lg:w-1/3 items-center gap-5 my-4 ">
-              <button className="bg-[#b8add2] rounded-md p-2 px-3">
-                Help?
+              <button className="text-[#1fc7d4] font-medium my-2">
+                Community auctions
               </button>
-              <div className="bg-[#27262c] w-full rounded-2xl p-4 px-6 text-white">
-                <h1 className="text-sm text-[#c1bed3] font-semibold my-3">
-                  Auto CAKE Bounty ?
-                </h1>
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h1 className="font-bold text-[#c1bed3]">0.058</h1>
-                    <span className="text-xs text-[#c1bed3]">0.02 USD</span>
-                  </div>
-                  <button className="bg-[#1fc7d4] px-3 p-1 rounded ">
-                    Claim
-                  </button>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -174,4 +154,4 @@ const Earn: NextPage = () => {
   );
 };
 
-export default Earn;
+export default Pool;
