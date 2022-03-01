@@ -1,77 +1,15 @@
-// eslint-disable-next-line no-use-before-define
-import React, { useState } from "react";
 import Link from "next/link";
 import { NextPage } from "next";
-import { Switch } from "@headlessui/react";
 import Navbar from "../../components/Navbar";
-import { BsFillGrid3X2GapFill } from "react-icons/bs";
-import { AiOutlineBars, AiOutlineCaretDown } from "react-icons/ai";
 import Footer from "../../components/Footer";
 import MyCustomTable from "../../components/MyCustomTable";
 
 const NftActivity: NextPage = () => {
-  const [drop, setDrop] = useState<boolean>(false);
-
-  const handleDropDown = () => {
-    setDrop(!drop);
-  };
-  function MyToggle() {
-    const [enabled, setEnabled] = React.useState(false);
-    // eslint-disable-next-line no-undef
-
-    return (
-      <Switch
-        checked={enabled}
-        onChange={setEnabled}
-        className={`${
-          enabled ? "bg-[#666171]" : "bg-[#372f47]"
-        } relative inline-flex items-center h-5 rounded-full w-10`}
-      >
-        <span className="sr-only">Enable notifications</span>
-        <span
-          className={`${
-            enabled ? "translate-x-5" : "translate-x-0"
-          } flex items-center bg-[#27262c] border-[#9a6aff] justify-center w-5 h-5 transform border-2  rounded-full`}
-        ></span>
-      </Switch>
-    );
-  }
-  function MyLiveToggle() {
-    const [enabled, setEnabled] = React.useState(true);
-
-    return (
-      <Switch
-        checked={enabled}
-        onChange={setEnabled}
-        className={`${
-          enabled ? "bg-[#372f47]" : " bg-[#372f47]  rounded-full"
-        } relative inline-flex items-center h-7  rounded-full w-32`}
-      >
-        <span className="sr-only">Enable notifications</span>
-        <span
-          className={`${
-            enabled ? "text-[#c1bed3]" : " text-[#372f47] bg-[#b8add2]"
-          } absolute text-white font-semibold  rounded-full flex justify-end px-2  right-0 `}
-        >
-          Finished
-        </span>
-
-        <span
-          className={`${
-            enabled ? " text-[#372f47] bg-[#b8add2]" : "text-[#c1bed3]"
-          } flex items-center font-semibold  justify-center w-12 h-7 transform rounded-full `}
-        >
-          Live
-        </span>
-      </Switch>
-    );
-  }
-
   return (
     <>
       <Navbar />
       <div className="bg-[#08060b]">
-        <div className="flex max-w-6xl lg:justify-center text-sm  lg:mx-auto py-2 mx-6 font-medium text-white gap-5">
+        <div className="flex bg-[#1d1d22] lg:justify-center text-sm  lg:mx-auto py-2 mx-6 font-medium text-white gap-5">
           <Link href="/nft"> Overview</Link>
           <Link href="/nft/collections"> Collections</Link>
           <Link href="/nft/activity"> Activity</Link>

@@ -25,11 +25,15 @@ const Navbar: NextPage = () => {
           </div>
           <div className="hidden  text-white ml-10 gap-7 lg:flex items-center ">
             <h1 className="text-[#aea4c7] text-sm">Trade</h1>
-            <Link href="/earn"> Earn</Link>
+            <span className=" text-[#aea4c7] text-sm">
+              {" "}
+              <Link href="/earn"> Earn</Link>{" "}
+            </span>
 
-            <h1 className="text-[#aea4c7] text-sm">Win</h1>
-
-            <Link href="/nft"> NFT</Link>
+            <span className="text-[#aea4c7] text-sm">
+              {" "}
+              <Link href="/nft"> NFT</Link>
+            </span>
             <button>
               <AiOutlineEllipsis size={24} className="text-[#aea4c7]" />
             </button>

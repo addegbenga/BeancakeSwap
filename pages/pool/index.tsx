@@ -71,7 +71,7 @@ const Pool: NextPage = () => {
     <>
       <Navbar />
       <div className="bg-[#08060b]">
-        <div className="flex max-w-6xl lg:justify-center lg:mx-auto py-2 mx-6 font-semibold text-white gap-3">
+        <div className="flex bg-[#1d1d22] lg:justify-center lg:mx-auto py-2 mx-6 font-semibold text-white gap-3">
           <Link href="/earn"> Farms</Link>
           <Link href="/pool"> Pools</Link>
         </div>
@@ -145,7 +145,7 @@ const Pool: NextPage = () => {
           </div>
         </div>
 
-        <div className="my-2 max-w-6xl mx-auto">
+        <div className="py-10 max-w-6xl mx-auto">
           <Tableu />
         </div>
       </div>

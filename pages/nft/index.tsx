@@ -46,11 +46,11 @@ const NftPage: NextPage = () => {
                 View all
               </button>
             </div>
-            <div className="grid lg:grid-cols-3 gap-10">
-              {[1, 2, 3, 4, 6, 7].fill(1, 2, 3).map((item, idx) => (
+            <div className="grid lg:grid-cols-3 gap-5">
+              {[1, 2, 3, 4, 6, 7, 8, 9, 10].fill(1, 2, 3).map((item, idx) => (
                 <div
                   key={idx}
-                  className=" border rounded-bl-[3.7rem] rounded-xl border-gray-300 border-opacity-30 bg-[#27262c] p-2  w-96 "
+                  className=" border rounded-bl-[3.7rem] rounded-xl border-gray-300 border-opacity-30 bg-[#27262c] p-2  w-90 "
                 >
                   <Image
                     src="/banner-sm.png"
