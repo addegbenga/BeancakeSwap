@@ -28,7 +28,8 @@ const Navbar: NextPage = () => {
             <Link href="/earn"> Earn</Link>
 
             <h1 className="text-[#aea4c7] text-sm">Win</h1>
-            <h1 className="text-[#aea4c7] text-sm">NFT</h1>
+
+            <Link href="/nft"> NFT</Link>
             <button>
               <AiOutlineEllipsis size={24} className="text-[#aea4c7]" />
             </button>
