@@ -3,6 +3,7 @@ import { Fragment } from "react";
 import Image from "next/image";
 import { NextPage } from "next";
 import { AiOutlineEllipsis } from "react-icons/ai";
+import { useRouter } from "next/router";
 import { FaTimes } from "react-icons/fa";
 import WalletConnectProvider from "@walletconnect/web3-provider";
 
@@ -16,29 +17,16 @@ const provider = new WalletConnectProvider({
 });
 
 const MyModal: NextPage<props> = ({ isOpen, setIsOpen }) => {
+  const router = useRouter();
   function closeModal() {
     setIsOpen(false);
   }
 
   async function handleOpenWeb3Modal() {
     try {
-      // if (provider.wc.pending) {
-      //   console.log(provider.wc.session.chainId);
-      // }
-
-      // console.log(provider);
-      // await provider.enable();
-
       await provider.enable();
-
-      // console.log(await provider.wc.createSession());
     } catch (error) {
-      // const sessionParams = {
-      //   approved: false,
-      //   chainId: null,
-      //   networkId: null,
-      //   accounts: null,
-      // };
+      router.reload();
       console.log(error);
     }
   }
