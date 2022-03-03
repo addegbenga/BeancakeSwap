@@ -40,7 +40,7 @@ const MyTable: NextPage = () => {
           <MdKeyboardArrowUp size={20} color="#1fc7d4" />
         </div>
       </div>
-      <div className="md:gap-10 gap-4 flex flex-col-reverse md:flex-row  py-4">
+      <div className="md:gap-10  flex flex-col-reverse md:flex-row  py-4">
         <div className="flex w-full md:w-2/6 flex-col gap-1 ">
           <div className="flex  gap-1">
             <h1 className=" text-[#1fc7d4] text-sm">Get CAKE-BNB LP </h1>
@@ -63,7 +63,7 @@ const MyTable: NextPage = () => {
           </button>
         </div>
 
-        <div className="text-white border-2 w-full md:w-9/12 rounded-xl h-24 justify-center border-[#372f47] p-3 flex flex-col  ">
+        <div className="text-white my-4 border-2 w-full md:w-9/12 rounded-xl h-24 justify-center border-[#372f47] p-3 flex flex-col  ">
           <h1 className="text-xs font-semibold">
             <span className="text-[#9a6aff]">CAKE</span> EARNED
           </h1>
