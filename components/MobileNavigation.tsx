@@ -10,23 +10,22 @@ const MobileNavigation: NextPage = () => {
           <Image src="/trade.svg" width={17} height={17} />
           <h1 className="text-[0.6rem]">Trade</h1>
         </div>
-        <div className="flex-col text-[#aea4c7] flex items-center">
-          <Image src="/earn.svg" width={17} height={17} />
-          <span className="text-[0.6rem]">
-            {" "}
-            <Link href="/earn"> Earn</Link>{" "}
-          </span>
-        </div>
+        <Link passHref={true} href="/earn">
+          <div className="flex-col text-[#aea4c7] flex items-center">
+            <Image src="/earn.svg" width={17} height={17} />
+            <span className="text-[0.6rem]"> Earn</span>
+          </div>
+        </Link>{" "}
         <div className="flex-col text-[#aea4c7] flex items-center">
           <Image src="/win.svg" width={17} height={17} />
           <h1 className="text-[0.6rem]">Win</h1>
         </div>
-        <div className="flex-col text-[#aea4c7] flex items-center">
-          <Image src="/nft.svg" width={17} height={17} />
-          <span className="text-[0.6rem]">
-            <Link href="/nft"> NFT</Link>
-          </span>
-        </div>
+        <Link passHref={true} href="/nft">
+          <div className="flex-col text-[#aea4c7] flex items-center">
+            <Image src="/nft.svg" width={17} height={17} />
+            <span className="text-[0.6rem]">NFT</span>
+          </div>
+        </Link>
         <div className="flex-col text-[#aea4c7] flex items-center">
           <AiOutlineEllipsis size={30} className="text-[#aea4c7]" />
         </div>
