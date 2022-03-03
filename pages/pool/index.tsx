@@ -106,7 +106,7 @@ const Pool: NextPage = () => {
           <div className="flex   mx-4 gap-3 ">
             <div className="w-64 ">
               <h1 className="text-[#c1bed3] lg:text-sm">Sort by</h1>
-              <div className="relative ">
+              <div className="relative z-30 ">
                 <div
                   className={` ${
                     drop
@@ -122,7 +122,7 @@ const Pool: NextPage = () => {
                 <ul
                   className={`${
                     drop
-                      ? " transition-all h-48  ease-in-out  duration-300 "
+                      ? " transition-all h-40  ease-in-out  duration-300 "
                       : ""
                   }  bg-[#372f47] rounded-b-2xl font-medium gap-3 text-[#f4eeff]  flex flex-col h-0 px-2  absolute w-full   overflow-y-hidden  transition-all ease-in-out  `}
                 >

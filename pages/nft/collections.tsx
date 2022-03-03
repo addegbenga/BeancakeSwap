@@ -49,14 +49,14 @@ const NftCollections: NextPage = () => {
     <>
       <Navbar />
       <div className="bg-[#08060b]">
-        <div className="flex bg-[#1d1d22] lg:justify-center lg:mx-auto py-2 mx-6 font-medium text-sm text-white gap-5">
+        <div className="flex bg-[#1d1d22] lg:justify-center lg:mx-auto py-4 px-6 lg:px-0 font-medium text-sm text-white gap-5">
           <Link href="/nft"> Overview</Link>
           <Link href="/nft/collections"> Collections</Link>
           <Link href="/nft/activity"> Activity</Link>
           {/* <h1 className="text-[#c1bed3]">Pools</h1> */}
         </div>
         <div className="bg-[#363559] ">
-          <div className=" max-w-6xl mx-auto lg:items-center lg:flex lg:justify-between lg:py-6 p-6 lg:p-0 py-7">
+          <div className=" max-w-6xl mx-auto lg:items-center lg:flex lg:justify-between lg:py-12 p-6 lg:p-0 py-8">
             <div>
               <h1 className="text-[#9a6aff]  text-4xl lg:text-6xl font-black mb-4">
                 Collections
@@ -65,9 +65,9 @@ const NftCollections: NextPage = () => {
           </div>
         </div>
 
-        <div className="pb-28 max-w-6xl  mx-auto">
+        <div className="pb-28 max-w-6xl  px-3 lg:px-0   mx-auto">
           <div>
-            <div className=" flex justify-end pt-10  pb-3">
+            <div className=" flex lg:justify-end pt-10  pb-3">
               <DropDown />
             </div>
             <div className="grid lg:grid-cols-3 gap-4">

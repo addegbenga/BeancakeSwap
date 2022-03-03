@@ -3,7 +3,7 @@ import Image from "next/image";
 import { MdKeyboardArrowUp } from "react-icons/md";
 const MyTable: NextPage = () => {
   return (
-    <div className="">
+    <div className=" mx-4 md:mx-0">
       <div className="flex bg-[#27262c] rounded-t-2xl p-5 items-center  justify-between">
         <div className="flex items-center gap-1">
           <Image src="/bnbcake.svg" height={23} width={23} />
@@ -20,7 +20,7 @@ const MyTable: NextPage = () => {
             <Image src="/calc.svg" height={20} width={20} />
           </div>
         </div>
-        <div>
+        <div className="hidden md:block">
           <h1 className="text-xs text-[#aea4c7]">Liquidity</h1>
 
           <div className="flex gap-1">
@@ -28,7 +28,7 @@ const MyTable: NextPage = () => {
             <Image src="/question.svg" height={23} width={23} />
           </div>
         </div>
-        <div>
+        <div className="hidden md:block">
           <h1 className="text-xs text-[#aea4c7]">Multiplier</h1>
           <div className="flex gap-1">
             <h1 className="text-[#f4eeff]"> 40x</h1>
@@ -40,8 +40,8 @@ const MyTable: NextPage = () => {
           <MdKeyboardArrowUp size={20} color="#1fc7d4" />
         </div>
       </div>
-      <div className="gap-10 flex  py-4">
-        <div className="flex w-2/6 flex-col gap-1 ">
+      <div className="md:gap-10 gap-4 flex flex-col-reverse md:flex-row  py-4">
+        <div className="flex w-full md:w-2/6 flex-col gap-1 ">
           <div className="flex  gap-1">
             <h1 className=" text-[#1fc7d4] text-sm">Get CAKE-BNB LP </h1>
             <Image src="/arr.svg" width={22} height={22} />
@@ -63,7 +63,7 @@ const MyTable: NextPage = () => {
           </button>
         </div>
 
-        <div className="text-white border-2 w-9/12 rounded-xl h-24 justify-center border-[#372f47] p-3 flex flex-col  ">
+        <div className="text-white border-2 w-full md:w-9/12 rounded-xl h-24 justify-center border-[#372f47] p-3 flex flex-col  ">
           <h1 className="text-xs font-semibold">
             <span className="text-[#9a6aff]">CAKE</span> EARNED
           </h1>
@@ -75,7 +75,7 @@ const MyTable: NextPage = () => {
           </div>
         </div>
 
-        <div className=" text-white border-2 w-9/12 rounded-xl h-24 flex flex-col justify-center  border-[#372f47] p-3   ">
+        <div className=" text-white border-2 w-full gap-2 md:w-9/12 rounded-xl h-24 flex flex-col justify-center  border-[#372f47] p-3   ">
           <h1 className="text-xs font-semibold text-[#aea4c7]">
             START FARMING
           </h1>

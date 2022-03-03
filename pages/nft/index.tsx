@@ -10,7 +10,7 @@ const NftPage: NextPage = () => {
     <>
       <Navbar />
       <div className="bg-[#08060b]">
-        <div className="flex  bg-[#1d1d22] lg:justify-center text-sm lg:mx-auto py-2.5 mx-6 font-medium text-white gap-5">
+        <div className="flex  bg-[#1d1d22]  px-6  lg:px-0 lg:justify-center text-sm lg:mx-auto py-4  font-medium text-white gap-5">
           <Link href="/nft"> Overview</Link>
           <Link href="/nft/collections"> Collections</Link>
           <Link href="/nft/activity"> Activity</Link>
@@ -29,14 +29,14 @@ const NftPage: NextPage = () => {
             <div className=" ">
               <input
                 type="search"
-                className="bg-[#27262c] grid placeholder-[#b8add2] border border-[#08060b] text-sm rounded-xl p-2.5 pr-20 pl-4"
+                className="bg-[#27262c] grid mt-3 lg:mt-0 placeholder-[#b8add2] border border-[#08060b] text-sm rounded-xl p-2.5 pr-20 pl-4"
                 placeholder="Search address"
               />
             </div>
           </div>
         </div>
 
-        <div className="py-10 max-w-6xl mx-auto">
+        <div className="py-10 max-w-6xl px-3 lg:px-0 mx-auto">
           <div>
             <div className="flex justify-between py-8">
               <h1 className="text-white text-2xl font-bold">
