@@ -1,5 +1,6 @@
 import { NextPage } from "next";
 import { AiOutlineEllipsis } from "react-icons/ai";
+import Link from "next/link";
 import Image from "next/image";
 const MobileNavigation: NextPage = () => {
   return (
@@ -11,7 +12,10 @@ const MobileNavigation: NextPage = () => {
         </div>
         <div className="flex-col text-[#aea4c7] flex items-center">
           <Image src="/earn.svg" width={17} height={17} />
-          <h1 className="text-[0.6rem]">Earn</h1>
+          <span className="text-[0.6rem]">
+            {" "}
+            <Link href="/earn"> Earn</Link>{" "}
+          </span>
         </div>
         <div className="flex-col text-[#aea4c7] flex items-center">
           <Image src="/win.svg" width={17} height={17} />
@@ -19,7 +23,9 @@ const MobileNavigation: NextPage = () => {
         </div>
         <div className="flex-col text-[#aea4c7] flex items-center">
           <Image src="/nft.svg" width={17} height={17} />
-          <h1 className="text-[0.6rem]">NFT</h1>
+          <span className="text-[0.6rem]">
+            <Link href="/nft"> NFT</Link>
+          </span>
         </div>
         <div className="flex-col text-[#aea4c7] flex items-center">
           <AiOutlineEllipsis size={30} className="text-[#aea4c7]" />
