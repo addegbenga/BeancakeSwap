@@ -51,7 +51,7 @@ const Pool: NextPage = () => {
         <span
           className={`${
             enabled ? "text-[#c1bed3]" : " text-[#372f47] bg-[#b8add2]"
-          } absolute text-white font-semibold  rounded-full flex justify-end px-2  right-0 `}
+          } absolute text-white font-semibold text-sm  rounded-full flex justify-end px-2  right-0 `}
         >
           Finished
         </span>
@@ -59,7 +59,7 @@ const Pool: NextPage = () => {
         <span
           className={`${
             enabled ? " text-[#372f47] bg-[#b8add2]" : "text-[#c1bed3]"
-          } flex items-center font-semibold  justify-center w-12 h-7 transform rounded-full `}
+          } flex items-center font-semibold text-sm  justify-center w-12 h-7 transform rounded-full `}
         >
           Live
         </span>
@@ -105,7 +105,7 @@ const Pool: NextPage = () => {
           </div>
           <div className="flex   mx-4 gap-3 ">
             <div className="w-64 ">
-              <h1 className="text-[#c1bed3] lg:text-sm">Sort by</h1>
+              <h1 className="text-[#c1bed3] text-sm ">Sort by</h1>
               <div className="relative z-30 ">
                 <div
                   className={` ${
@@ -135,7 +135,7 @@ const Pool: NextPage = () => {
               </div>
             </div>
             <div className="w-full">
-              <h1 className="text-[#c1bed3] lg:text-sm">Search</h1>
+              <h1 className="text-[#c1bed3] text-sm">Search</h1>
               <input
                 className="p-2 text-white w-full placeholder-[#c1bed3] text-sm rounded-2xl bg-[#372f47]"
                 type="search"
