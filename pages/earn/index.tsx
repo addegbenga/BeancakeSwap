@@ -7,6 +7,7 @@ import Tableu from "../../components/MyTable";
 import Navbar from "../../components/Navbar";
 import { BsFillGrid3X2GapFill } from "react-icons/bs";
 import { AiOutlineBars, AiOutlineCaretDown } from "react-icons/ai";
+import MobileNavigation from "../../components/MobileNavigation";
 import Footer from "../../components/Footer";
 
 const Earn: NextPage = () => {
@@ -71,7 +72,7 @@ const Earn: NextPage = () => {
     <>
       <Navbar />
       <div className="bg-[#08060b]">
-        <div className="flex bg-[#1d1d22] lg:justify-center lg:mx-auto py-2 px-6 font-semibold text-white gap-3">
+        <div className="flex bg-[#1d1d22] lg:justify-center lg:mx-auto py-2 px-6 font-semibold text-[#aea4c7] gap-3">
           <Link href="/earn"> Farms</Link>
           <Link href="/pool"> Pools</Link>
           {/* <h1 className="text-[#c1bed3]">Pools</h1> */}
@@ -169,6 +170,7 @@ const Earn: NextPage = () => {
           <Tableu />
         </div>
       </div>
+      <MobileNavigation />
       <Footer />
     </>
   );

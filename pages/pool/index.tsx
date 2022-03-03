@@ -8,7 +8,7 @@ import Navbar from "../../components/Navbar";
 import { BsFillGrid3X2GapFill } from "react-icons/bs";
 import { AiOutlineBars, AiOutlineCaretDown } from "react-icons/ai";
 import Footer from "../../components/Footer";
-
+import MobileNavigation from "../../components/MobileNavigation";
 const Pool: NextPage = () => {
   const [drop, setDrop] = useState<boolean>(false);
 
@@ -71,7 +71,7 @@ const Pool: NextPage = () => {
     <>
       <Navbar />
       <div className="bg-[#08060b]">
-        <div className="flex bg-[#1d1d22] lg:justify-center lg:mx-auto py-2 mx-6 font-semibold text-white gap-3">
+        <div className="flex bg-[#1d1d22] lg:justify-center lg:mx-auto py-2 mx-6 font-semibold text-[#aea4c7] gap-3">
           <Link href="/earn"> Farms</Link>
           <Link href="/pool"> Pools</Link>
         </div>
@@ -149,6 +149,7 @@ const Pool: NextPage = () => {
           <Tableu />
         </div>
       </div>
+      <MobileNavigation />
       <Footer />
     </>
   );

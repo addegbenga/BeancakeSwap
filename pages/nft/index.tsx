@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { NextPage } from "next";
 import Navbar from "../../components/Navbar";
-
+import MobileNavigation from "../../components/MobileNavigation";
 import Footer from "../../components/Footer";
 
 const NftPage: NextPage = () => {
@@ -10,7 +10,7 @@ const NftPage: NextPage = () => {
     <>
       <Navbar />
       <div className="bg-[#08060b]">
-        <div className="flex  bg-[#1d1d22]  px-6  lg:px-0 lg:justify-center text-sm lg:mx-auto py-4  font-medium text-white gap-5">
+        <div className="flex  bg-[#1d1d22]  px-6  lg:px-0 lg:justify-center text-sm lg:mx-auto py-4  font-medium text-[#aea4c7] gap-5">
           <Link href="/nft"> Overview</Link>
           <Link href="/nft/collections"> Collections</Link>
           <Link href="/nft/activity"> Activity</Link>
@@ -85,6 +85,7 @@ const NftPage: NextPage = () => {
           </div>
         </div>
       </div>
+      <MobileNavigation />
       <Footer />
     </>
   );

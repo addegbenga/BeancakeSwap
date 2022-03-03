@@ -3,6 +3,7 @@ import Link from "next/link";
 import { NextPage } from "next";
 import Image from "next/image";
 import { AiOutlineCaretDown } from "react-icons/ai";
+import MobileNavigation from "../../components/MobileNavigation";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 
@@ -51,7 +52,7 @@ const NftCollections: NextPage = () => {
     <>
       <Navbar />
       <div className="bg-[#08060b]">
-        <div className="flex bg-[#1d1d22] lg:justify-center lg:mx-auto py-4 px-6 lg:px-0 font-medium text-sm text-white gap-5">
+        <div className="flex bg-[#1d1d22] lg:justify-center lg:mx-auto py-4 px-6 lg:px-0 font-medium text-sm text-[#aea4c7] gap-5">
           <Link href="/nft"> Overview</Link>
           <Link href="/nft/collections"> Collections</Link>
           <Link href="/nft/activity"> Activity</Link>
@@ -111,6 +112,7 @@ const NftCollections: NextPage = () => {
           </div>
         </div>
       </div>
+      <MobileNavigation />
       <Footer />
     </>
   );

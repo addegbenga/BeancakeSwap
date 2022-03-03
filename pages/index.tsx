@@ -8,6 +8,7 @@ import Passive from "../components/Passive";
 import PriceSection from "../components/PriceSection";
 import Cake from "../components/Cake";
 import StartInSeconds from "../components/StartInSeconds";
+import MobileNavigation from "../components/MobileNavigation";
 
 const Home: NextPage = () => {
   return (
@@ -20,6 +21,7 @@ const Home: NextPage = () => {
       <PriceSection />
       <Cake />
       <StartInSeconds />
+      <MobileNavigation />
       <Footer />
     </>
   );

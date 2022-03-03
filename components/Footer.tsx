@@ -38,7 +38,7 @@ const Footer: NextPage = () => {
   }
 
   return (
-    <div className="bg-[#27262c] px-4 py-10 lg:pt-20 lg:py-0">
+    <div className="bg-[#27262c] px-4 pb-28 md:pb-0 py-10 lg:pt-20 lg:py-0">
       <div className="lg:max-w-6xl lg:mx-auto">
         <div className="flex flex-col lg:flex-row-reverse justify-between  lg:gap-9 gap-4 ">
           <ul className="border-b lg:border-0 border-opacity-20 border-white pb-4">
