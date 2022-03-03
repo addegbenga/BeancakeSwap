@@ -63,7 +63,7 @@ const MyTable: NextPage = () => {
           </button>
         </div>
 
-        <div className="text-white my-4 border-2 w-full md:w-9/12 rounded-xl h-24 justify-center border-[#372f47] p-3 flex flex-col  ">
+        <div className="text-white my-4 md:my-0 border-2 w-full md:w-9/12 rounded-xl h-24 justify-center border-[#372f47] p-3 flex flex-col  ">
           <h1 className="text-xs font-semibold">
             <span className="text-[#9a6aff]">CAKE</span> EARNED
           </h1>
