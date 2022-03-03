@@ -11,7 +11,7 @@ type props = {
   isOpen: boolean;
   setIsOpen: (value: boolean) => void;
 };
-//  Create WalletConnect Provider
+
 const provider = new WalletConnectProvider({
   infuraId: "209f2acd12054d99b32ca59bedda84e0",
 });
