@@ -123,8 +123,8 @@ const Pool: NextPage = () => {
                   className={`${
                     drop
                       ? " transition-all h-40  ease-in-out  duration-300 "
-                      : ""
-                  }  bg-[#372f47] rounded-b-2xl font-medium gap-3 text-[#f4eeff]  flex flex-col h-0 px-2  absolute w-full   overflow-y-hidden  transition-all ease-in-out  `}
+                      : "h-0"
+                  }  bg-[#372f47] rounded-b-2xl font-medium gap-3 text-[#f4eeff]  flex flex-col  px-2  absolute w-full   overflow-y-hidden  transition-all ease-in-out  `}
                 >
                   <li className="mt-4">APR</li>
                   <li>Multiplier</li>
