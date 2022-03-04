@@ -8,7 +8,6 @@ import MyModal from "./Modal";
 
 const Navbar: NextPage = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-
   const handleOpenWeb3Modal = () => {
     setIsOpen(true);
   };
@@ -27,7 +26,6 @@ const Navbar: NextPage = () => {
                   layout="responsive"
                 />
               </div>
-
               <h1 className="text-white text-lg font-bold hidden lg:block">
                 PancakeSwap
               </h1>

@@ -26,10 +26,10 @@ const NftPage: NextPage = () => {
                 Buy and Sell NFTs on BNB Smart Chain
               </p>
             </div>
-            <div className=" ">
+            <div className=" text-white">
               <input
                 type="search"
-                className="bg-[#27262c] grid mt-3 lg:mt-0 placeholder-[#b8add2] border border-[#08060b] text-sm rounded-xl p-2.5 pr-20 pl-4"
+                className="bg-[#27262c]  grid mt-3 lg:mt-0 placeholder-[#b8add2] border border-[#08060b] text-sm rounded-xl p-2.5 pr-20 pl-4"
                 placeholder="Search address"
               />
             </div>

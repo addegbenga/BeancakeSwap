@@ -1,7 +1,8 @@
 import { Dialog, Transition } from "@headlessui/react";
-import { Fragment } from "react";
+import { Fragment, useState, useEffect } from "react";
 import Image from "next/image";
 import { NextPage } from "next";
+import { ethers } from "ethers";
 import { AiOutlineEllipsis } from "react-icons/ai";
 import { useRouter } from "next/router";
 import { FaTimes } from "react-icons/fa";
@@ -18,6 +19,7 @@ const provider = new WalletConnectProvider({
 
 const MyModal: NextPage<props> = ({ isOpen, setIsOpen }) => {
   const router = useRouter();
+  const [walletAddress, setWalletAddress] = useState<object | string | any>();
   function closeModal() {
     setIsOpen(false);
   }
@@ -30,6 +32,112 @@ const MyModal: NextPage<props> = ({ isOpen, setIsOpen }) => {
       console.log(error);
     }
   }
+
+  useEffect(() => {
+    if (typeof (window as any).ethereum !== "undefined") {
+      const tests = async () => {
+        const provider = new ethers.providers.Web3Provider(
+          (window as any).ethereum
+        );
+        const accounts = await provider.listAccounts();
+        if ((accounts as any) > 1) {
+          // eslint-disable-next-line no-undef
+          const wallet = JSON.parse(localStorage.getItem("addrr"));
+          setWalletAddress(wallet && wallet);
+        } else {
+          // eslint-disable-next-line no-undef
+          localStorage.removeItem("addrr");
+        }
+      };
+      tests();
+    }
+  }, []);
+
+  const handleChainIdChange = async () => {
+    // Handle the new chain.
+    // Correctly handling chain changes can be complicated.
+    // We recommend reloading the page unless you have good reason not to.
+    try {
+      const provider = new ethers.providers.Web3Provider(
+        (window as any).ethereum
+      );
+      const signer = provider.getSigner();
+      const signedAddress = await signer.getAddress();
+      const network = await provider.getNetwork();
+      const balance = await provider.getBalance(signedAddress);
+      const convertedBalance = ethers.utils.formatEther(balance);
+      // eslint-disable-next-line no-undef
+      localStorage.setItem(
+        "addrr",
+        JSON.stringify({
+          signedAddress: signedAddress,
+          connected: true,
+          balance: convertedBalance,
+          network: network.name,
+        })
+      );
+      // eslint-disable-next-line no-undef
+      const localss = JSON.parse(localStorage.getItem("addrr"));
+      setWalletAddress(localss && localss);
+    } catch (error) {
+      // eslint-disable-next-line no-undef
+      localStorage.removeItem("addrr");
+      setWalletAddress("");
+    }
+
+    // window.location.reload();
+  };
+
+  useEffect(() => {
+    if (typeof (window as any).ethereum !== "undefined") {
+      (window as any).ethereum.on("chainChanged", handleChainIdChange);
+
+      return () => {
+        (window as any).ethereum.removeListener(
+          "chainChanged",
+          handleChainIdChange
+        );
+      };
+    }
+  }, []);
+
+  const requestAccount = async () => {
+    try {
+      if (typeof (window as any).ethereum !== "undefined") {
+        console.log("hit here");
+        let localss: any;
+        await (window as any).ethereum.request({
+          method: "eth_requestAccounts",
+        });
+        const provider = new ethers.providers.Web3Provider(
+          (window as any).ethereum
+        );
+        const signer = provider.getSigner();
+        const signedAddress = await signer.getAddress();
+        const balance = await provider.getBalance(signedAddress);
+        const network = await provider.getNetwork();
+        const convertedBalance = ethers.utils.formatEther(balance);
+        // eslint-disable-next-line no-undef
+        localss = localStorage.setItem(
+          "addrr",
+          JSON.stringify({
+            signedAddress: signedAddress,
+            connected: true,
+            balance: convertedBalance,
+            network: network.name,
+          })
+        );
+        // eslint-disable-next-line no-undef
+        localss = JSON.parse(localStorage.getItem("addrr"));
+        setWalletAddress(localss && localss);
+        closeModal();
+      } else {
+        alert("Please install metamask");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <>
@@ -78,7 +186,12 @@ const MyModal: NextPage<props> = ({ isOpen, setIsOpen }) => {
                 <div className="grid grid-cols-2 gap-10 border-b border-gray-100 border-opacity-10 py-10 ">
                   <div className="flex items-center flex-col">
                     <Image src="/metamask.svg" height={40} width={40} />
-                    <h1 className="text-sm text-white">Metamask</h1>
+                    <button
+                      onClick={requestAccount}
+                      className="text-sm text-white"
+                    >
+                      Metamask
+                    </button>
                   </div>
                   <div
                     onClick={handleOpenWeb3Modal}
