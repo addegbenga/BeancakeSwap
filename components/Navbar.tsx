@@ -1,9 +1,9 @@
 import { NextPage } from "next";
-import { useState, useEffect } from "react";
-import { ethers } from "ethers";
+import { useState, useContext } from "react";
 import { FaWallet } from "react-icons/fa";
 import { IoIosArrowDown } from "react-icons/io";
 import { AiTwotoneSetting, AiOutlineEllipsis } from "react-icons/ai";
+import { metamaskContext } from "../context/walletContext";
 import Link from "next/link";
 import Image from "next/image";
 import { BsGlobe } from "react-icons/bs";
@@ -11,127 +11,15 @@ import PopOver from "./PopOver";
 import MyModal from "./Modal";
 
 const Navbar: NextPage = () => {
+  const walletAddress = useContext(metamaskContext);
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [openPop, setOpenPop] = useState<boolean>(false);
   // eslint-disable-next-line no-undef
-  const [walletAddress, setWalletAddress] = useState<any>();
+
   const handleOpenWeb3Modal = () => {
     setIsOpen(true);
   };
-  const tests = async () => {
-    try {
-      const providers = new ethers.providers.Web3Provider(
-        (window as any).ethereum
-      );
-      const signer = providers.getSigner();
-      const accounts = await providers.listAccounts();
-      const signedAddress = await signer.getAddress();
-      const network = await providers.getNetwork();
-      const balance = await providers.getBalance(signedAddress);
-      const convertedBalance = ethers.utils.formatEther(balance);
 
-      if ((accounts as any) > 1) {
-        // eslint-disable-next-line no-undef
-        setWalletAddress({
-          signedAddress,
-          network,
-          convertedBalance,
-        });
-      } else {
-        setWalletAddress(null);
-      }
-    } catch (error) {
-      console.log(error);
-      setWalletAddress(null);
-    }
-  };
-  useEffect(() => {
-    const controller = new AbortController();
-
-    if (typeof (window as any).ethereum !== "undefined") {
-      tests();
-    }
-    return () => {
-      controller?.abort();
-    };
-  }, []);
-  const handleChainIdChange = async () => {
-    try {
-      const providers = new ethers.providers.Web3Provider(
-        (window as any).ethereum
-      );
-      const signer = providers.getSigner();
-      const signedAddress = await signer.getAddress();
-      const network = await providers.getNetwork();
-      const balance = await providers.getBalance(signedAddress);
-      const convertedBalance = ethers.utils.formatEther(balance);
-      setWalletAddress({
-        signedAddress,
-        network,
-        convertedBalance,
-      });
-      // eslint-disable-next-line no-undef
-    } catch (error) {
-      // eslint-disable-next-line no-undef
-      console.log("errro");
-      setWalletAddress(null);
-    }
-
-    // window.location.reload();
-  };
-
-  const handelAccountChange = async () => {
-    try {
-      const providers = new ethers.providers.Web3Provider(
-        (window as any).ethereum
-      );
-      const accounts = await providers.listAccounts();
-      const signer = providers.getSigner();
-      const signedAddress = await signer.getAddress();
-      const network = await providers.getNetwork();
-      const balance = await providers.getBalance(signedAddress);
-      const convertedBalance = ethers.utils.formatEther(balance);
-      if ((accounts as any) > 1) {
-        // eslint-disable-next-line no-undef
-        setWalletAddress({
-          signedAddress,
-          network,
-          convertedBalance,
-        });
-      } else {
-        setWalletAddress("");
-      }
-      console.log(providers);
-    } catch (error) {
-      console.log(error);
-      setWalletAddress(null);
-    }
-  };
-  useEffect(() => {
-    if (typeof (window as any).ethereum !== "undefined") {
-      (window as any).ethereum.on("accountsChanged", handelAccountChange);
-
-      return () => {
-        (window as any).ethereum.removeListener(
-          "accountsChanged",
-          handelAccountChange
-        );
-      };
-    }
-  }, []);
-
-  useEffect(() => {
-    if (typeof (window as any).ethereum !== "undefined") {
-      (window as any).ethereum.on("chainChanged", handleChainIdChange);
-
-      return () => {
-        (window as any).ethereum.removeListener(
-          "chainChanged",
-          handleChainIdChange
-        );
-      };
-    }
-  }, []);
   return (
     <>
       <MyModal isOpen={isOpen} setIsOpen={setIsOpen} />
@@ -171,7 +59,7 @@ const Navbar: NextPage = () => {
             </div>
           </div>
           <>
-            {walletAddress && (
+            {walletAddress.wallets ? (
               <button onClick={() => setOpenPop(true)} className="relative">
                 <div className="flex bg-[#353547] rounded-full gap-2 pr-2 items-center">
                   <div className="bg-black p-1.5 border-2 border-[#1fc7d4] rounded-full">
@@ -179,15 +67,14 @@ const Navbar: NextPage = () => {
                   </div>
 
                   <span className="text-[#aea4c7] w-20 truncate font-bold text-sm">
-                    {walletAddress?.signedAddress}
+                    {walletAddress.wallets &&
+                      walletAddress.wallets.signedAddress}
                   </span>
                   <IoIosArrowDown size={20} className="text-[#aea4c7]" />
                 </div>
                 <PopOver isOpen={openPop} setIsOpen={setOpenPop} />
               </button>
-            )}
-
-            {walletAddress === null && (
+            ) : (
               <div className="flex gap-5 items-center">
                 <BsGlobe className="text-xl text-[#aea4c7]" />
                 <AiTwotoneSetting className="text-2xl text-[#aea4c7]" />
