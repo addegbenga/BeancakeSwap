@@ -136,9 +136,7 @@ const Navbar: NextPage = () => {
     <>
       <MyModal isOpen={isOpen} setIsOpen={setIsOpen} />
       <div
-        onMouseLeave={() => {
-          setOpenPop(false);
-        }}
+        onMouseLeave={() => setOpenPop(false)}
         className="bg-[#27262c] relative border-b border-white border-opacity-20 "
       >
         <div className="flex container  lg:mx-auto items-center  shadow-lg p-3 py-4 justify-between">
@@ -174,12 +172,7 @@ const Navbar: NextPage = () => {
           </div>
           <>
             {walletAddress && (
-              <button
-                onMouseEnter={() => {
-                  setOpenPop(true);
-                }}
-                className="relative"
-              >
+              <button onClick={() => setOpenPop(true)} className="relative">
                 <div className="flex bg-[#353547] rounded-full gap-2 pr-2 items-center">
                   <div className="bg-black p-1.5 border-2 border-[#1fc7d4] rounded-full">
                     <FaWallet className="text-[#1fc7d4]" />
