@@ -158,7 +158,7 @@ const Earn: NextPage = () => {
             <div className="w-full">
               <h1 className="text-[#c1bed3] lg:text-sm">Search</h1>
               <input
-                className="p-2 text-white w-full placeholder-[#c1bed3] text-sm rounded-2xl bg-[#372f47]"
+                className="p-2.5 text-white w-full placeholder-[#c1bed3] text-sm rounded-2xl bg-[#372f47]"
                 type="search"
                 placeholder="Search Farms"
               />
