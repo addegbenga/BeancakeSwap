@@ -18,10 +18,6 @@ const CMC_TOKEN_LIST =
   "https://api.coinmarketcap.com/data-api/v3/uniswap/all.json";
 const Uniswap: NextPage = () => {
   const walletAddress = useContext(metamaskContext);
-  useEffect(() => {
-    console.log(walletAddress.myproviders);
-    console.log("");
-  });
 
   return (
     <div className="Uniswap flex justify-center">
@@ -32,7 +28,7 @@ const Uniswap: NextPage = () => {
         defaultInputTokenAddress={NATIVE}
         defaultOutputTokenAddress={WBTC}
         theme={darkTheme}
-        width={360} // Custom width in pixels
+        // Custom width in pixels
       />
     </div>
   );
