@@ -43,7 +43,10 @@ const Navbar: NextPage = () => {
               </h1>
             </div>
             <div className="hidden  text-white ml-10 gap-7 lg:flex items-center ">
-              <h1 className="text-[#aea4c7] text-sm">Trade</h1>
+              <span className=" text-[#aea4c7] text-sm">
+                {" "}
+                <Link href="/trade"> Trade</Link>{" "}
+              </span>
               <span className=" text-[#aea4c7] text-sm">
                 {" "}
                 <Link href="/earn"> Earn</Link>{" "}

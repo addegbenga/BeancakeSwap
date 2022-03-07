@@ -13,6 +13,7 @@ import MobileNavigation from "../components/MobileNavigation";
 const Home: NextPage = () => {
   return (
     <>
+      {/* <Uniswap /> */}
       <Navbar />
       <Hero />
       <TrustedBy />

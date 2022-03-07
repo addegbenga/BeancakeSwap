@@ -6,11 +6,22 @@ export const metamaskContext = createContext(null);
 
 export const MetamaskProvider: NextPage = ({ children }) => {
   const [wallets, setWalletAddress] = useState<any>();
+  const [myproviders, setMyProviders] = useState<any>();
+
+  // useEffect(() => {
+  //   // Use the mainnet
+  //   const providerrr = ethers.getDefaultProvider("ropsten", {
+  //     infura: "https://ropsten.infura.io/v3/209f2acd12054d99b32ca59bedda84e0",
+  //   });
+  //   console.log(providerrr);
+
+  // }, []);
   const tests = async () => {
     try {
       const providers = new ethers.providers.Web3Provider(
         (window as any).ethereum
       );
+      setMyProviders(providers);
       const signer = providers.getSigner();
       const accounts = await providers.listAccounts();
       const signedAddress = await signer.getAddress();
@@ -119,7 +130,9 @@ export const MetamaskProvider: NextPage = ({ children }) => {
   }, []);
 
   return (
-    <metamaskContext.Provider value={{ wallets: wallets }}>
+    <metamaskContext.Provider
+      value={{ wallets: wallets, myproviders: myproviders }}
+    >
       {children}
     </metamaskContext.Provider>
   );
