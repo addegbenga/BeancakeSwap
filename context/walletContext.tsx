@@ -40,7 +40,7 @@ export const MetamaskProvider: NextPage = ({ children }) => {
   const tests = async () => {
     try {
       const providers = new ethers.providers.Web3Provider(
-        (window as any).ethereum
+        (window as any).ethereum || provider
       );
       setMyProviders(providers);
       const signer = providers.getSigner();
