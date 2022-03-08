@@ -40,9 +40,14 @@ export const MetamaskProvider: NextPage = ({ children }) => {
   const tests = async () => {
     try {
       const providers = new ethers.providers.Web3Provider(
-        (window as any).ethereum || provider
+        (window as any).ethereum
       );
-      setMyProviders(providers);
+      if (typeof (window as any).ethereum !== "undefined") {
+        setMyProviders(providers);
+      } else {
+        setMyProviders(provider);
+      }
+
       const signer = providers.getSigner();
       const accounts = await providers.listAccounts();
       const signedAddress = await signer.getAddress();
