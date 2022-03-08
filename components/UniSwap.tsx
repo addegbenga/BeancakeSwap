@@ -1,7 +1,7 @@
 import { darkTheme, SwapWidget } from "@uniswap/widgets";
 import { NextPage } from "next";
 
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { metamaskContext } from "../context/walletContext";
 import "@uniswap/widgets/fonts.css";
 const jsonRpcEndpoint =
@@ -20,7 +20,7 @@ const Uniswap: NextPage = () => {
   const walletAddress = useContext(metamaskContext);
 
   return (
-    <div className="Uniswap flex justify-center">
+    <div className="Uniswap flex justify-center ">
       <SwapWidget
         provider={walletAddress.myproviders && walletAddress.myproviders}
         jsonRpcEndpoint={jsonRpcEndpoint && jsonRpcEndpoint}

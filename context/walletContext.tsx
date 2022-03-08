@@ -1,10 +1,16 @@
 import { useState, createContext, useEffect } from "react";
 import { NextPage } from "next";
 import { ethers } from "ethers";
+import { useRouter } from "next/router";
+import WalletConnectProvider from "@walletconnect/web3-provider";
 
 export const metamaskContext = createContext(null);
+const provider = new WalletConnectProvider({
+  infuraId: "209f2acd12054d99b32ca59bedda84e0",
+});
 
 export const MetamaskProvider: NextPage = ({ children }) => {
+  const router = useRouter();
   const [wallets, setWalletAddress] = useState<any>();
   const [myproviders, setMyProviders] = useState<any>();
 
@@ -16,6 +22,21 @@ export const MetamaskProvider: NextPage = ({ children }) => {
   //   console.log(providerrr);
 
   // }, []);
+  async function handleOpenWeb3Modal() {
+    try {
+      await provider.enable();
+      if (provider.connected) {
+        const signedAddress = provider.accounts[0];
+        setWalletAddress({
+          signedAddress,
+        });
+      }
+    } catch (error) {
+      router.reload();
+      console.log(error);
+    }
+  }
+
   const tests = async () => {
     try {
       const providers = new ethers.providers.Web3Provider(
@@ -131,7 +152,11 @@ export const MetamaskProvider: NextPage = ({ children }) => {
 
   return (
     <metamaskContext.Provider
-      value={{ wallets: wallets, myproviders: myproviders }}
+      value={{
+        wallets: wallets,
+        myproviders: myproviders,
+        handleOpenWeb3Modal,
+      }}
     >
       {children}
     </metamaskContext.Provider>

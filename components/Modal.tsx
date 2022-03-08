@@ -1,34 +1,21 @@
 import { Dialog, Transition } from "@headlessui/react";
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
 import Image from "next/image";
 import { NextPage } from "next";
 import { AiOutlineEllipsis } from "react-icons/ai";
-import { useRouter } from "next/router";
+import { metamaskContext } from "../context/walletContext";
 import { FaTimes } from "react-icons/fa";
-import WalletConnectProvider from "@walletconnect/web3-provider";
 
 type props = {
   isOpen: boolean;
   setIsOpen: (value: boolean) => void;
 };
 
-const provider = new WalletConnectProvider({
-  infuraId: "209f2acd12054d99b32ca59bedda84e0",
-});
-
 const MyModal: NextPage<props> = ({ isOpen, setIsOpen }) => {
-  const router = useRouter();
+  const handleWeb3Context = useContext(metamaskContext);
+
   function closeModal() {
     setIsOpen(false);
-  }
-
-  async function handleOpenWeb3Modal() {
-    try {
-      await provider.enable();
-    } catch (error) {
-      router.reload();
-      console.log(error);
-    }
   }
 
   const requestAccount = async () => {
@@ -103,7 +90,7 @@ const MyModal: NextPage<props> = ({ isOpen, setIsOpen }) => {
                     </button>
                   </div>
                   <div
-                    onClick={handleOpenWeb3Modal}
+                    onClick={handleWeb3Context.handleOpenWeb3Modal}
                     className="flex items-center flex-col"
                   >
                     <Image src="/wconnect.svg" height={40} width={40} />
