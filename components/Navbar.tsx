@@ -1,9 +1,9 @@
 import { NextPage } from "next";
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { FaWallet } from "react-icons/fa";
 import { IoIosArrowDown } from "react-icons/io";
 import { AiTwotoneSetting, AiOutlineEllipsis } from "react-icons/ai";
-import { metamaskContext } from "../context/walletContext";
+import { useWeb3React } from "@web3-react/core";
 import Link from "next/link";
 import Image from "next/image";
 import { BsGlobe } from "react-icons/bs";
@@ -11,7 +11,7 @@ import PopOver from "./PopOver";
 import MyModal from "./Modal";
 
 const Navbar: NextPage = () => {
-  const walletAddress = useContext(metamaskContext);
+  const web3reactContext = useWeb3React();
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [openPop, setOpenPop] = useState<boolean>(false);
   // eslint-disable-next-line no-undef
@@ -62,7 +62,7 @@ const Navbar: NextPage = () => {
             </div>
           </div>
           <>
-            {walletAddress.wallets ? (
+            {web3reactContext.account ? (
               <button onClick={() => setOpenPop(true)} className="relative">
                 <div className="flex bg-[#353547] rounded-full gap-2 pr-2 items-center">
                   <div className="bg-black p-1.5 border-2 border-[#1fc7d4] rounded-full">
@@ -70,8 +70,7 @@ const Navbar: NextPage = () => {
                   </div>
 
                   <span className="text-[#aea4c7] w-20 truncate font-bold text-sm">
-                    {walletAddress.wallets &&
-                      walletAddress.wallets.signedAddress}
+                    {web3reactContext.account}
                   </span>
                   <IoIosArrowDown size={20} className="text-[#aea4c7]" />
                 </div>

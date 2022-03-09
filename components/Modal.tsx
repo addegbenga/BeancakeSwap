@@ -18,23 +18,6 @@ const MyModal: NextPage<props> = ({ isOpen, setIsOpen }) => {
     setIsOpen(false);
   }
 
-  const requestAccount = async () => {
-    try {
-      if (typeof (window as any).ethereum !== "undefined") {
-        await (window as any).ethereum.request({
-          method: "eth_requestAccounts",
-        });
-
-        closeModal();
-      } else {
-        // eslint-disable-next-line no-undef
-        alert("Please install metamask");
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   return (
     <>
       <Transition appear show={isOpen} as={Fragment}>
@@ -83,14 +66,14 @@ const MyModal: NextPage<props> = ({ isOpen, setIsOpen }) => {
                   <div className="flex items-center flex-col">
                     <Image src="/metamask.svg" height={40} width={40} />
                     <button
-                      onClick={requestAccount}
+                      onClick={handleWeb3Context.connectMetamaskSimple}
                       className="text-sm text-white"
                     >
                       Metamask
                     </button>
                   </div>
                   <div
-                    onClick={handleWeb3Context.handleOpenWeb3Modal}
+                    onClick={handleWeb3Context.connectWalletConnectSimple}
                     className="flex items-center flex-col"
                   >
                     <Image src="/wconnect.svg" height={40} width={40} />
