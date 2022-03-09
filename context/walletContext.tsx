@@ -1,7 +1,7 @@
 import { createContext } from "react";
-import { useWeb3React } from "@web3-react/core";
+import { useWeb3React, Web3ReactProvider } from "@web3-react/core";
+import { Web3Provider } from "@ethersproject/providers";
 import { NextPage } from "next";
-
 import {
   injected,
   walletconnect,
@@ -21,10 +21,17 @@ export const MetamaskProvider: NextPage = ({ children }) => {
       console.log(ex);
     }
   };
+  const getLibrary = (provider) => {
+    const library = new Web3Provider(provider, "any");
+    library.pollingInterval = 15000;
+    console.log(library);
+    return library;
+  };
 
   const connectMetamaskSimple = async () => {
     try {
       await web3reactContext.activate(injected);
+      console.log(Web3ReactProvider);
     } catch (ex) {
       console.log(ex);
     }
@@ -176,6 +183,7 @@ export const MetamaskProvider: NextPage = ({ children }) => {
         connectWalletConnectSimple,
         connectMetamaskSimple,
         disconnectMetamaskSimple,
+        getLibrary,
       }}
     >
       {children}
