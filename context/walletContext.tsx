@@ -46,7 +46,8 @@ export const MetamaskProvider: NextPage = ({ children }) => {
       if (window.localStorage?.getItem("isWalletConnected") === "true") {
         try {
           await web3reactContext.activate(injected);
-          window.localStorage.setItem("isWalletConnected", true as any);
+          // eslint-disable-next-line no-undef
+          localStorage.setItem("isWalletConnected", true as any);
         } catch (error) {
           console.log(error);
         }
@@ -58,7 +59,8 @@ export const MetamaskProvider: NextPage = ({ children }) => {
   const connectMetamaskSimple = async () => {
     try {
       await web3reactContext.activate(injected);
-      window.localStorage.setItem("isWalletConnected", true as any);
+      // eslint-disable-next-line no-undef
+      localStorage.setItem("isWalletConnected", true as any);
     } catch (ex) {
       console.log(ex);
     }

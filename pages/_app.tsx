@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+import { useEffect } from "react";
 import { Web3ReactProvider } from "@web3-react/core";
 import { Web3Provider } from "@ethersproject/providers";
 import type { AppProps } from "next/app";
@@ -10,11 +11,12 @@ function MyApp({ Component, pageProps }: AppProps) {
   //   localStorage.clear();
   // };
 
-  // useEffect(() => {
-  //   window.onload = function () {
-  //     localStorage.clear();
-  //   };
-  // }, []);
+  useEffect(() => {
+    window.onload = function () {
+      // eslint-disable-next-line no-undef
+      localStorage.clear();
+    };
+  }, []);
 
   const getLibrary = (provider) => {
     const library = new Web3Provider(provider, "any");
