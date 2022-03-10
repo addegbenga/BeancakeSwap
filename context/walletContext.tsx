@@ -1,4 +1,4 @@
-import { createContext, useEffect } from "react";
+import { createContext } from "react";
 import { useWeb3React } from "@web3-react/core";
 import { Web3Provider } from "@ethersproject/providers";
 import { NextPage } from "next";
@@ -41,20 +41,20 @@ export const MetamaskProvider: NextPage = ({ children }) => {
   //   connectOnPageReloadMobile();
   // }, []);
 
-  useEffect(() => {
-    const connectOnPageReload = async () => {
-      if (window.localStorage?.getItem("isWalletConnected") === "true") {
-        try {
-          await web3reactContext.activate(injected);
-          // eslint-disable-next-line no-undef
-          localStorage.setItem("isWalletConnected", true as any);
-        } catch (error) {
-          console.log(error);
-        }
-      }
-    };
-    connectOnPageReload();
-  }, []);
+  // useEffect(() => {
+  //   const connectOnPageReload = async () => {
+  //     if (window.localStorage?.getItem("isWalletConnected") === "true") {
+  //       try {
+  //         await web3reactContext.activate(injected);
+  //         // eslint-disable-next-line no-undef
+  //         localStorage.setItem("isWalletConnected", true as any);
+  //       } catch (error) {
+  //         console.log(error);
+  //       }
+  //     }
+  //   };
+  //   connectOnPageReload();
+  // }, []);
 
   const connectMetamaskSimple = async () => {
     try {
