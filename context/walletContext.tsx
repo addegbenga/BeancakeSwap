@@ -17,7 +17,6 @@ export const MetamaskProvider: NextPage = ({ children }) => {
     try {
       resetWalletConnector(walletconnect);
       await web3reactContext.activate(walletconnect);
-      window.localStorage.setItem("isWalletConnectedMobile", true as any);
     } catch (ex) {
       console.log(ex);
     }
@@ -28,19 +27,19 @@ export const MetamaskProvider: NextPage = ({ children }) => {
     console.log(library);
     return library;
   };
-  useEffect(() => {
-    const connectOnPageReloadMobile = async () => {
-      if (window.localStorage?.getItem("isWalletConnectedMobile") === "true") {
-        try {
-          await web3reactContext.activate(injected);
-          window.localStorage.setItem("isWalletConnectedMobile", true as any);
-        } catch (error) {
-          console.log(error);
-        }
-      }
-    };
-    connectOnPageReloadMobile();
-  }, []);
+  // useEffect(() => {
+  //   const connectOnPageReloadMobile = async () => {
+  //     if (window.localStorage?.getItem("isWalletConnectedMobile") === "true") {
+  //       try {
+  //         await web3reactContext.activate(injected);
+  //         window.localStorage.setItem("isWalletConnectedMobile", true as any);
+  //       } catch (error) {
+  //         console.log(error);
+  //       }
+  //     }
+  //   };
+  //   connectOnPageReloadMobile();
+  // }, []);
 
   useEffect(() => {
     const connectOnPageReload = async () => {
