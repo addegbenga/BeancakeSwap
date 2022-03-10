@@ -17,6 +17,7 @@ export const MetamaskProvider: NextPage = ({ children }) => {
     try {
       resetWalletConnector(walletconnect);
       await web3reactContext.activate(walletconnect);
+      window.localStorage.setItem("isWalletConnected", true as any);
     } catch (ex) {
       console.log(ex);
     }
